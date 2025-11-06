@@ -1,0 +1,65 @@
+<div class="popup-back" *ngIf="istrue">
+    <div class="popup-front">
+
+        <div class="head">
+            <div class="head-left">
+                <h3>Create Packing</h3>
+                <p>Define and manage packing configurations for product variants.</p>
+            </div>
+            <div class="head-right">
+                <p class="code">Code: {{ code }}</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="center-left">
+                <h4>Pack Identification</h4>
+                <p style="color:#7C7C7C;">Define the label or reference for this packing unit</p>
+
+                <h4>Quantity Details</h4>
+                <p style="color:#7C7C7C;">Set the quantity distribution per packing unit</p>
+
+                <h4>Size Specification</h4>
+                <p style="color:#7C7C7C;">Specify the actual physical volume or weight</p>
+            </div>
+
+            <div class="center-right">
+
+                <label>Name</label>
+                <input type="text" placeholder="e.g., Drumii" id="name-button" [(ngModel)]="name" />
+
+                <div class="qty-row">
+                    <div>
+                        <label>Pack Qty</label>
+                        <input type="number" id="pack-qty" min="1" max="100" [(ngModel)]="packQty" />
+                    </div>
+                    <div>
+                        <label>Std Pack Qty</label>
+                        <input type="number" id="std-pack-qty" min="1" max="100" [(ngModel)]="stdPackQty" />
+                    </div>
+                </div>
+
+                <label>Pack Size</label>
+                <input type="number" placeholder="5.0" id="pack-size" [(ngModel)]="packsize" />
+            </div>
+        </div>
+
+        <div class="remarks">
+            <label>Remarks</label>
+            <textarea id="remarks-box" placeholder="Enter remarks..." [(ngModel)]="remarks"></textarea>
+
+        </div>
+
+        <div class="bottom">
+            <label class="checkbox">
+                <input type="checkbox" [(ngModel)]="active" />
+                <span>Active</span>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button (click)="closepopup()" id="cancel-butt">Cancel</button>
+            <button (click)="save()" id="save-butt">Save</button>
+        </div>
+    </div>
+</div>

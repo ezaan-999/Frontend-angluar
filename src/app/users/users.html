@@ -1,0 +1,95 @@
+<div class="main-background">
+    <div class="white-strip">
+        <div class="navbar-2">
+            <nav>Packing</nav>
+        </div>
+    </div>
+
+    <div class="records">
+        <span>8 Records</span>
+    </div>
+
+    <div class="top-bar">
+        <div class="search-box">
+            <input type="text" placeholder="Code/Name/Active">
+            <img src="assets/images/mag.svg" alt="Search">
+        </div>
+
+        <div class="right-side">
+            <div class="advanced-filter">
+                <img src="assets/images/filter.svg" alt="Filter" class="filter-icon">
+                <span>Advanced Filter</span>
+            </div>
+
+            <div class="vertical-line"></div>
+            <img src="assets/images/updown.svg" alt="Sort" class="sort-icon">
+
+            <div class="vertical-line"></div>
+            <img src="assets/images/Group.svg" alt="Group" class="group-icon">
+
+            <div class="vertical-line"></div>
+            <img src="assets/images/calander.svg" alt="Calendar" class="calendar-icon">
+        </div>
+
+        <button (click)="createpacking()" class="create-btn">
+            <img src="assets/images/plus.svg" class="plus-icon" alt="Plus">
+            Create Packing
+        </button>
+        <app-create-packing (saveData)="addNewPacking($event)"></app-create-packing>
+
+
+        <span class="dots-menu-nav"> ⋮</span>
+
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 6%;">Name</th>
+                    <th style="width: 6%;">Code</th>
+                    <th style="width: 8%;">Pack Qty</th>
+                    <th style="width: 8%;">Std Pack Qty</th>
+                    <th style="width: 8%;">Pack Size</th>
+                    <th style="width: 18%;">Remarks</th>
+                    <th style="width: 14%;">Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pack of packings; let i = index">
+                    <td>{{ pack.name }}</td>
+                    <td>{{ pack.code }}</td>
+                    <td class="QTY">{{ pack.packQty }}</td>
+                    <td class="QTY">{{ pack.stdPackQty }}</td>
+                    <td class="QTY">{{ pack.packsize }}</td>
+                    <td>{{ pack.remarks }}</td>
+                    <td>
+                        <div class="active-cell">
+                            <span class="status"
+                                [ngClass]="{ 'yes': pack.active === 'Yes', 'no': pack.active === 'No' }">
+                                {{ pack.active }}
+                            </span>
+
+                            <span class="dots-menu" (click)="dotsmenu(i)">⋮</span>
+                            <div class="dots-menu-dropdown" *ngIf="activeMenuIndex === i">
+
+                                <img src="assets/images/editnew.svg" alt="Edit" class="edit-icon">
+                                <button class="edit-dropdown" (click)="editbutton(i)">Edit</button>
+
+                                <img src="assets/images/printnew.svg" alt="Print" class="print-icon">
+                                <button class="print-dropdown" (click)="printbutton(i)">Print</button>
+
+                                <img src="assets/images/deletenew.svg" alt="Deletebutton" class="delete-icon" />
+                                <button class="delete-dropdown" (click)="deletebutton(i)">Delete</button>
+
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+
+
+
+        </table>
+    </div>
