@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreatePacking } from '../create-packing/create-packing';
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -9,9 +10,12 @@ import { CreatePacking } from '../create-packing/create-packing';
   templateUrl: './users.html',
   styleUrls: ['./users.css']
 })
+
 export class Users {
   @ViewChild(CreatePacking) createPacking!: CreatePacking;
   activeMenuIndex: number | null = null;
+
+
 
   get packings() {
     const stored = localStorage.getItem('packings');
@@ -28,7 +32,7 @@ export class Users {
 
   addNewPacking(entry: any) {
     const data = this.packings;
-    if (entry.index !== undefined && entry.index !== null) {
+    if (entry.index !== null) {
       data[entry.index] = entry;
     } else {
       data.push(entry);
@@ -41,7 +45,6 @@ export class Users {
   }
 
   editbutton(index: number) {
-    debugger;
     const pack = this.packings[index];
     this.createPacking.editdata(pack, index);
   }
