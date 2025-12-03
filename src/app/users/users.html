@@ -1,102 +1,120 @@
 <div class="main-content">
+    <div class="white-strip bg-white border-bottom py-2">
+        <div class="container-fluid">
 
-    <div class="white-strip">
-        <div class="navbar-2">
-            <span class="header-p">Home | Settings</span>
-            <nav>Packings</nav>
-        </div>
-    </div>
-
-    <div class="records">
-        <span>8 Records</span>
-    </div>
-
-    <div class="top-bar">
-
-
-        <div class="search-box">
-            <input type="text" placeholder="Code/Name/Active">
-            <img src="assets/images/mag.svg">
-        </div>
-
-        <div class="header-icons">
-
-            <div class="advanced-filter">
-                <img src="assets/images/filter.svg" class="filter-icon">
-                <span>Advanced Filter</span>
+            <div>
+                <span class="text-muted small">Home | Settings</span>
             </div>
 
-            <div class="vertical-line"></div>
-            <img src="assets/images/updown.svg" class="sort-icon">
-
-            <div class="vertical-line"></div>
-            <img src="assets/images/Group.svg" class="group-icon">
-
-            <div class="vertical-line"></div>
-            <img src="assets/images/calander.svg" class="calendar-icon">
+            <div class="mt-1">
+                <nav class="header">Packings</nav>
+            </div>
 
         </div>
-
-        <button class="create-btn" (click)="createpacking()">
-            <img src="assets/images/plus.svg">
-            Create Packing
-        </button>
-        <app-create-packing (saveData)="addNewPacking($event)"></app-create-packing>
-
-
-        <span class="dots-menu-nav"> ⋮</span>
-
     </div>
 
-    <div class="table-container mt-10">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th style="width: 6%;">Name</th>
-                    <th style="width: 6%;">Code</th>
-                    <th style="width: 8%;">Pack Qty</th>
-                    <th style="width: 8%;">Std Pack Qty</th>
-                    <th style="width: 8%;">Pack Size</th>
-                    <th style="width: 18%;">Remarks</th>
-                    <th style="width: 14%;">Active</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let pack of packings; let i = index">
-                    <td>{{ pack.name }}</td>
-                    <td>{{ pack.code }}</td>
-                    <td class="QTY">{{ pack.packQty }}</td>
-                    <td class="QTY">{{ pack.stdPackQty }}</td>
-                    <td class="QTY">{{ pack.packsize }}</td>
-                    <td>{{ pack.remarks }}</td>
-                    <td>
-                        <div class="active-cell">
-                            <span class="status"
-                                [ngClass]="{ 'yes': pack.active === 'Yes', 'no': pack.active === 'No' }">
-                                {{ pack.active }}
-                            </span>
+    <div class="my-4"></div>
 
-                            <span class="dots-menu" (click)="dotsmenu(i)">⋮</span>
-                            <div class="dots-menu-dropdown" *ngIf="activeMenuIndex === i">
+    <div class="container-fluid bg-white">
+        <div class="row">
 
-                                <img src="assets/images/editnew.svg" alt="Edit" class="edit-icon">
-                                <button class="edit-dropdown" (click)="editbutton(i)">Edit</button>
-
-                                <img src="assets/images/printnew.svg" alt="Print" class="print-icon">
-                                <button class="print-dropdown" (click)="printbutton(i)">Print</button>
-
-                                <img src="assets/images/deletenew.svg" alt="Deletebutton" class="delete-icon" />
-                                <button class="delete-dropdown" (click)="deletebutton(i)">Delete</button>
-
-                            </div>
+            <div class="first-child col-md-6 col-sm-12 col-12 d-flex flex-wrap">
+                <div class="d-flex justify-content-start pt-2 pb-2">
+                    <div class="search-records-row d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="search-box">
+                            <input placeholder="Code/Name/Active" />
+                            <img src="assets/images/mag.svg" />
                         </div>
 
-                    </td>
-                </tr>
-            </tbody>
+                        <span class="records">8 Records</span>
+                    </div>
 
+                </div>
+            </div>
 
+            <div class="last-child col-md-6 col-sm-12 col-12">
+                <div class="icons-responsive d-flex justify-content-end pt-2 pb-2">
 
-        </table>
+                    <div class="icons d-flex">
+                        <div class="advanced-filter">
+                            <img src="assets/images/filter.svg" class="filter-icon">
+                            <span>Advanced Filter</span>
+                        </div>
+                        <div class="vertical-line"></div>
+
+                        <img src="assets/images/updown.svg" class="sort-icon">
+                        <div class="vertical-line"></div>
+
+                        <img src="assets/images/Group.svg" class="group-icon">
+                        <div class="vertical-line"></div>
+
+                        <img src="assets/images/calander.svg" class="calendar-icon">
+                    </div>
+
+                    <div class="button d-flex flex-wrap ms-3">
+                        <button class="create-btn" (click)="createpacking()">
+                            <img src="assets/images/plus.svg" class="me-2">
+                            Create Packing
+                        </button>
+
+                        <app-create-packing (saveData)="addNewPacking($event)"></app-create-packing>
+                    </div>
+
+                    <!-- <span class="dots-menu-nav d-flex ms-2">⋮</span> -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 6%;">Name</th>
+                        <th style="width: 6%;">Code</th>
+                        <th style="width: 8%;">Pack Qty</th>
+                        <th style="width: 8%;">Std Pack Qty</th>
+                        <th style="width: 8%;">Pack Size</th>
+                        <th style="width: 18%;">Remarks</th>
+                        <th style="width: 14%;">Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pack of packings; let i = index">
+                        <td>{{ pack.name }}</td>
+                        <td>{{ pack.code }}</td>
+                        <td class="QTY">{{ pack.packQty }}</td>
+                        <td class="QTY">{{ pack.stdPackQty }}</td>
+                        <td class="QTY">{{ pack.packsize }}</td>
+                        <td>{{ pack.remarks }}</td>
+                        <td>
+                            <div class="active-cell">
+                                <span class="status"
+                                    [ngClass]="{ 'yes': pack.active === 'Yes', 'no': pack.active === 'No' }">
+                                    {{ pack.active }}
+                                </span>
+
+                                <span class="dots-menu" (click)="dotsmenu(i)">⋮</span>
+                                <div class="dots-menu-dropdown" *ngIf="activeMenuIndex === i">
+
+                                    <img src="assets/images/editnew.svg" alt="Edit" class="edit-icon">
+                                    <button class="edit-dropdown" (click)="editbutton(i)">Edit</button>
+
+                                    <img src="assets/images/printnew.svg" alt="Print" class="print-icon">
+                                    <button class="print-dropdown" (click)="printbutton(i)">Print</button>
+
+                                    <img src="assets/images/deletenew.svg" alt="Deletebutton" class="delete-icon" />
+                                    <button class="delete-dropdown" (click)="deletebutton(i)">Delete</button>
+
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

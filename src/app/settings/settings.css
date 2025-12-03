@@ -1,5 +1,5 @@
 .main-content {
-    margin-left: 250px;
+    margin-left: 70px;
     padding: 25px;
     background-color: #f9fafb;
     min-height: 100vh;
@@ -29,7 +29,7 @@
 .records {
     position: absolute;
     top: 148px;
-    left: 608px;
+    left: 429px;
     font-size: 13px;
     font-weight: 500;
     color: #414141;
@@ -115,6 +115,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
+    margin-left: 260px;
 }
 
 .create-btn img {

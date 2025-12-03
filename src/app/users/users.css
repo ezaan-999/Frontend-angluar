@@ -1,23 +1,24 @@
 .main-content {
-    margin-left: 250px;
+    margin-left: 70px;
     padding: 25px;
     background-color: #f9fafb;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
 
-.white-strip {
-    background-color: #fff;
-    padding: 10px 20px;
-    border-bottom: 1px solid #e5e5e5;
-    display: flex;
-    align-items: center;
+.header {
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.header-p {
+.white-strip {
+    background-color: #fff;
+
+}
+
+.text-muted {
     font-size: 12px;
     color: #6b6b6b;
-    display: block;
 }
 
 .navbar-2 nav {
@@ -27,9 +28,8 @@
 }
 
 .records {
-    position: absolute;
-    top: 148px;
-    left: 608px;
+    margin-top: 10px;
+    margin-left: 5px;
     font-size: 13px;
     font-weight: 500;
     color: #414141;
@@ -48,6 +48,8 @@
 
 .search-box {
     width: 310px;
+    /* width: 100%;
+    max-width: 310px; */
     height: 36px;
     border: 1px solid #E7E7E7;
     border-radius: 6px;
@@ -77,6 +79,7 @@
 }
 
 .vertical-line {
+    margin-top: 7px;
     height: 22px;
     border-left: 1px solid #C8C8C8;
     opacity: 0.8;
@@ -87,8 +90,25 @@
 .group-icon,
 .calendar-icon {
     width: 18px;
-    height: 18px;
     cursor: pointer;
+    gap: 20px;
+}
+
+.icons {
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.button {
+    margin-left: 20px;
+}
+
+.dots-menu-nav {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #5A5A5A;
 }
 
 .advanced-filter {
@@ -101,8 +121,9 @@
     cursor: pointer;
 }
 
+
 .create-btn {
-    width: 200px;
+    width: 160px;
     height: 36px;
     background: linear-gradient(93deg, #478EF1, #7C39ED);
     border: none;
@@ -115,6 +136,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
+
 }
 
 .create-btn img {
@@ -136,7 +158,6 @@
 .table {
     width: 100%;
     border: 1px solid #E1E1E1;
-    border-collapse: collapse;
     border-style: dotted;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -253,6 +274,7 @@
     color: #414141;
     border: 0.64px solid;
     background: #FCFEFE;
+    margin-top: 5px;
     margin-left: 15px;
     transform: translate(8px, -26px);
 }
@@ -260,6 +282,7 @@
 .print-dropdown {
     color: #414141;
     background-color: #fcfefe;
+    margin-top: 5px;
     margin-left: 15px;
     transform: translate(8px, -50.5px);
 }
@@ -268,6 +291,7 @@
     color: #f93a37;
     margin-left: 15px;
     background-color: #fdebeb;
+    margin-top: 5px;
     transform: translate(8px, -75px);
     background: #FFF1EE;
 }
@@ -289,4 +313,115 @@
 .delete-icon {
     transform: translate(4px, -38px);
     background: #FFF1EE;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+    .icons {
+        gap: 4px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-box {
+        width: 100% !important;
+    }
+
+    .icons {
+        gap: 4px !important;
+    }
+
+    span.records {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .first-child {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-bottom: 15px;
+        flex: none;
+        max-width: none;
+    }
+
+    .last-child {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        flex-wrap: nowrap;
+        flex: none;
+        max-width: none;
+    }
+
+    .last-child.advanced-filter {
+        white-space: nowrap;
+
+    }
+
+    .advanced-filter {
+        width: auto !important;
+    }
+
+    .records,
+    .button {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        flex-wrap: wrap;
+    }
+
+
+}
+
+@media (max-width:426px) {
+    .search-box {
+        width: 100% !important;
+    }
+
+    .search-box input::placeholder {
+        font-size: 10px !important;
+    }
+
+    .last-child {
+        margin-bottom: 10px !important;
+        align-items: center !important;
+    }
+
+    .icons-responsive {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        justify-content: space-between !important;
+    }
+
+    .records {
+        margin-top: 15px !important;
+        align-items: center !important;
+    }
+
+    .records.span {
+        flex-direction: column !important;
+    }
+
+    .button {
+
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .icons {
+        margin-bottom: 5px;
+    }
+
+
 }
