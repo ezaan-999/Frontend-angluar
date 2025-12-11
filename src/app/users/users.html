@@ -51,7 +51,7 @@
                         <img src="assets/images/calander.svg" class="calendar-icon">
                     </div>
 
-                    <div class="button d-flex flex-wrap ms-3">
+                    <div class="button d-flex ms-3">
                         <button class="create-btn" (click)="createpacking()">
                             <img src="assets/images/plus.svg" class="me-2">
                             Create Packing
@@ -95,8 +95,8 @@
                                     [ngClass]="{ 'yes': pack.active === 'Yes', 'no': pack.active === 'No' }">
                                     {{ pack.active }}
                                 </span>
-
                                 <span class="dots-menu" (click)="dotsmenu(i)">⋮</span>
+
                                 <div class="dots-menu-dropdown" *ngIf="activeMenuIndex === i">
 
                                     <img src="assets/images/editnew.svg" alt="Edit" class="edit-icon">

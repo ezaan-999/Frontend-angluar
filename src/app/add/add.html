@@ -1,78 +1,84 @@
 <div class="main-content">
-
-    <div class="white-strip">
-        <div class="navbar-2">
-            <span class="header-p">Add | Sales Invoice Return</span>
-            <nav>Sales Invoice Return</nav>
+    <div class="white-strip bg-white border-bottom py-2">
+        <div class="container-fluid">
+            <div>
+                <span class="text-muted small">Home | Sales</span>
+            </div>
+            <div class="mt-1">
+                <nav class="header">Sales Invoice Return</nav>
+            </div>
         </div>
     </div>
-    <br>
 
-    <div class="container-fluid px-3 bg-white">
+    <div class="my-4"></div>
+
+    <div class="container-fluid bg-white">
         <div class="row">
-            <div class="col-md-6 col-12 d-flex">
+
+
+            <div class="first-child col-md-6 col-sm-12 col-12 d-flex flex-wrap">
                 <div class="d-flex justify-content-start pt-2 pb-2">
-                    <div class="search-box">
-                        <input type="text" placeholder="Code/Name/Active">
-                        <img src="assets/images/mag.svg">
-                    </div>
-                    <div class="records d-flex">
-                        <span>9 Records</span>
+                    <div class="search-records-row d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="search-box">
+                            <input type="text" placeholder="Code/Name/Active">
+                            <img src="assets/images/mag.svg" alt="Search">
+                        </div>
+                        <span class="records">9 Records</span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="d-flex justify-content-end pt-2 pb-2">
-                    <div class="icons d-flex">
-                        <div class="advanced-filter">
-                            <img src="assets/images/filter.svg" class="filter-icon">
-                            <span>Advanced Filter</span>
-                        </div>
-                        <div class="vertical-line"></div>
-                        <img src="assets/images/updown.svg" class="sort-icon">
-                        <div class="vertical-line"></div>
-                        <img src="assets/images/Group.svg" class="group-icon">
-                        <div class="vertical-line"></div>
-                        <img src="assets/images/calander.svg" class="calendar-icon">
-                    </div>
 
-                    <div class="button d-flex">
+            <div class="last-child col-md-6 col-sm-12 col-12">
+                <div class="d-flex justify-content-end align-items-center pt-2 pb-2">
+
+
+                    <div class="d-flex align-items-center gap-2">
+
+
+                        <div class="icons d-flex align-items-center gap-3 ms-2">
+                            <div class="advanced-filter d-flex align-items-center gap-1">
+                                <img src="assets/images/filter.svg" class="filter-icon" alt="Filter">
+                                <span>Advanced Filter</span>
+                            </div>
+                            <div class="vertical-line"></div>
+                            <img src="assets/images/updown.svg" class="sort-icon" alt="Sort">
+                            <div class="vertical-line"></div>
+                            <img src="assets/images/Group.svg" class="group-icon" alt="Group">
+                            <div class="vertical-line"></div>
+                            <img src="assets/images/calander.svg" class="calendar-icon" alt="Calendar">
+                        </div>
                         <button class="create-btn">
-                            <img src="assets/images/plus.svg" class="me-2">
+                            <img src="assets/images/plus.svg" class="me-2" alt="Add">
                             Create Sales Invoice Return
                         </button>
 
                     </div>
-
-                    <span class="dots-menu-nav d-flex"> ⋮</span>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="container-fluid px-0 bg-white">
+        </div>
         <div class="table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Issue No</th>
-                        <th>Date</th>
-                        <th>Chalan No</th>
-                        <th>Chalan Date</th>
-                        <th>Sales Order</th>
-                        <th>Order Date</th>
-                        <th>Detail code</th>
-                        <th>Customer</th>
-                        <th>City</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Issue No</th>
+                            <th>Date</th>
+                            <th>Chalan No</th>
+                            <th>Chalan Date</th>
+                            <th>Sales Order</th>
+                            <th>Order Date</th>
+                            <th>Detail Code</th>
+                            <th>Customer</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

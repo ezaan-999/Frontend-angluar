@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CreatePacking {
   istrue = false;
+  isedit = false;
 
   name = '';
   code = 421;
@@ -26,6 +27,7 @@ export class CreatePacking {
   showpopup() {
     this.istrue = true;
     this.editIndex = null;
+    this.isedit = false;
   }
 
   closepopup() {
@@ -42,6 +44,7 @@ export class CreatePacking {
     this.active = data.active === 'Yes';
     this.editIndex = index;
     this.istrue = true;
+    this.isedit = true;
   }
 
   save() {
@@ -58,7 +61,7 @@ export class CreatePacking {
       packsize: this.packsize,
       remarks: this.remarks,
       active: this.active ? 'Yes' : 'No',
-      index: this.editIndex   
+      index: this.editIndex
     };
 
     this.saveData.emit(newEntry);
@@ -71,6 +74,37 @@ export class CreatePacking {
     this.packsize = 0;
     this.remarks = '';
     this.active = false;
+    this.editIndex = null;
+  }
+  update() {
+    if (!this.name || !this.packQty || !this.stdPackQty || !this.packsize || !this.remarks) {
+      alert('Please Fill In All Fields');
+      return;
+    }
+
+    const updatedEntry = {
+      name: this.name,
+      code: this.code,
+      packQty: this.packQty,
+      stdPackQty: this.stdPackQty,
+      packsize: this.packsize,
+      remarks: this.remarks,
+      active: this.active ? 'Yes' : 'No',
+      index: this.editIndex
+    };
+
+    this.saveData.emit(updatedEntry); 
+    this.closepopup();
+
+  
+    this.name = '';
+    this.code = 421;
+    this.packQty = 0;
+    this.stdPackQty = 0;
+    this.packsize = 0;
+    this.remarks = '';
+    this.active = false;
+    this.isedit = false;
     this.editIndex = null;
   }
 }

@@ -48,8 +48,6 @@
 
 .search-box {
     width: 310px;
-    /* width: 100%;
-    max-width: 310px; */
     height: 36px;
     border: 1px solid #E7E7E7;
     border-radius: 6px;
@@ -103,13 +101,14 @@
     margin-left: 20px;
 }
 
+/* 
 .dots-menu-nav {
     margin-top: 5px;
     margin-left: 10px;
     font-size: 20px;
     cursor: pointer;
     color: #5A5A5A;
-}
+} */
 
 .advanced-filter {
     display: flex;
@@ -231,18 +230,18 @@
 }
 
 .dots-menu-dropdown {
-    position: absolute;
+    position: fixed !important;
     height: 130px;
     border-radius: 8px;
     opacity: 1;
     border-width: 0.96px;
-    top: 30px;
-    right: 0px;
-    width: 168.88px;
+    top: 260px;
+    right: 70px;
+    width: 135px;
     border: 1px solid #efefef;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 99999 !important;
     background: #E7FBFF;
     backdrop-filter: blur(58px)
 }
@@ -317,11 +316,24 @@
 
 .table-responsive {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: visible;
     white-space: nowrap;
 }
 
+.menu-btn {
+    width: 28px;
+    height: 28px;
+    min-width: 0;
+    padding: 0;
+}
 
+.active-cell .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
 
 
 @media (max-width: 1024px) {
@@ -338,6 +350,7 @@
 
     .icons {
         gap: 4px !important;
+
     }
 
     span.records {
@@ -378,6 +391,10 @@
         justify-content: center !important;
         width: 100% !important;
         flex-wrap: wrap;
+    }
+
+    .button {
+        flex-direction: column !important;
     }
 
 

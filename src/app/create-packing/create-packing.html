@@ -1,65 +1,75 @@
 <div class="popup-back" *ngIf="istrue">
-    <div class="popup-front">
-
-        <div class="head">
-            <div class="head-left">
+    <div class="popup-front container">
+        <div class="row head">
+            <div class="col-md-8">
                 <h3>Create Packing</h3>
                 <p>Define and manage packing configurations for product variants.</p>
+
             </div>
-            <div class="head-right">
-                <p class="code">Code: {{ code }}</p>
-            </div>
+            <div><span class="code">Code:421</span></div>
         </div>
 
-        <div class="content">
-            <div class="center-left">
-                <h4>Pack Identification</h4>
-                <p style="color:#7C7C7C;">Define the label or reference for this packing unit</p>
+        <div class="row content ">
 
-                <h4>Quantity Details</h4>
-                <p style="color:#7C7C7C;">Set the quantity distribution per packing unit</p>
+            <div class="col-md-5 center-left">
 
-                <h4>Size Specification</h4>
-                <p style="color:#7C7C7C;">Specify the actual physical volume or weight</p>
+                <h4 class="pack-heading">Pack Identification</h4>
+                <p>Define the label or reference for this packing unit</p>
+                <br>
+                <h4 class="quantity-heading">Quantity Details</h4>
+                <p>Set the quantity distribution per packing unit</p>
+                <br>
+                <h4 class="size-heading">Size Specification</h4>
+                <p>Specify the actual physical volume or weight</p>
+
             </div>
 
-            <div class="center-right">
+            <div class="col-md-7 center-right">
 
-                <label>Name</label>
-                <input type="text" placeholder="e.g., Drumii" id="name-button" [(ngModel)]="name" />
+                <div class="mb-3">
+                    <label class="label-txt">Name <span class="name-txt">*</span></label>
+                    <input class="name-in" type="text" placeholder="e.g., Drumii" id="name-button" [(ngModel)]="name">
+                </div>
+                <div class=" d-flex row qty-row">
 
-                <div class="qty-row">
-                    <div>
-                        <label>Pack Qty</label>
-                        <input type="number" id="pack-qty" min="1" max="100" [(ngModel)]="packQty" />
+                    <div class="col-md-6 mb-3">
+                        <label class="label-txt">Pack Qty</label>
+                        <input class="packqty-in" type="number" id="pack-qty" min="1" max="100" [(ngModel)]="packQty">
                     </div>
-                    <div>
-                        <label>Std Pack Qty</label>
-                        <input type="number" id="std-pack-qty" min="1" max="100" [(ngModel)]="stdPackQty" />
+
+                    <div class="col-md-6 mb-3">
+                        <label class="label-txt">Std Pack Qty</label>
+                        <input class="stdpackqty-in" type="number" id="std-pack-qty" min="1" max="100"
+                            [(ngModel)]="stdPackQty">
                     </div>
+
+                </div>
+                <div class="mb-3">
+                    <label class="label-txt">Pack Size</label>
+                    <input class="packsize-in" type="number" placeholder="5.0" id="pack-size" [(ngModel)]="packsize">
                 </div>
 
-                <label>Pack Size</label>
-                <input type="number" placeholder="5.0" id="pack-size" [(ngModel)]="packsize" />
+            </div>
+
+        </div>
+        <div class="remarks">
+            <label class="remarks-label">Remarks</label>
+            <textarea id="remarks-box" class="form-control"
+                placeholder="This is the standard packing configuration for Drumi Classic variant. It includes ideal carton quantity and unit sizing. Use this setup for bulk orders."
+                [(ngModel)]="remarks"></textarea>
+        </div>
+        <div class="bottom mt-3">
+            <label class="checkbox">
+                <input type="checkbox" [(ngModel)]="active">
+                <span class="active-label">Active</span>
+            </label>
+            <div class="buttons">
+                <button id="cancel-butt" (click)="closepopup()">Cancel</button>
+                <button *ngIf="!isedit" id="save-butt" (click)="save()">Save</button>
+                <button *ngIf="isedit" id="update-butt" (click)="update()">Update</button>
             </div>
         </div>
 
-        <div class="remarks">
-            <label>Remarks</label>
-            <textarea id="remarks-box" placeholder="Enter remarks..." [(ngModel)]="remarks"></textarea>
 
-        </div>
-
-        <div class="bottom">
-            <label class="checkbox">
-                <input type="checkbox" [(ngModel)]="active" />
-                <span>Active</span>
-            </label>
-        </div>
-
-        <div class="buttons">
-            <button (click)="closepopup()" id="cancel-butt">Cancel</button>
-            <button (click)="save()" id="save-butt">Save</button>
-        </div>
     </div>
 </div>
